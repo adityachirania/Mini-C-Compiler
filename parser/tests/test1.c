@@ -1,5 +1,11 @@
 #include<stdio.h>
 
+
+void func(int a,int b)
+{
+    a = a + b;
+}
+
 int main(){
     int n,i;
     char ch;//Character Datatype
@@ -11,8 +17,9 @@ int main(){
                 x++;
             }
         }
-
     }
+
+    
     /*
     This File Contains Test cases about Datatypes,Keyword,Identifier,Nested For and while loop,
     Conditional Statement,Single line Comment,MultiLine Comment etc.*/

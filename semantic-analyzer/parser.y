@@ -13,7 +13,7 @@
 	void print_constant_table_proxy(void);
 	void print_symbol_table_proxy(void);
 	void insert_symbol_class_proxy(char *);
-	void insert_symbol_array_dimension_proxy();
+	void insert_symbol_array_dimension_proxy(int);
 	void insert_arg_list_proxy(char *, char *);
 	void append_star_proxy(char *);
 	char* get_type_proxy(char *, int);
@@ -278,7 +278,7 @@ variable_declaration_list_continuation
 // Each element in the declaration can be a pointer or a regular variable
 // TODO: type for arrays also
 single_element_declaration
-			: IDENTIFIER array_declaration initilization
+			: IDENTIFIER 
 			{ 
 				type_insert($<String>1); 
 				push($<String>1); 
@@ -286,7 +286,7 @@ single_element_declaration
 				nesting_insert(nesting);
 				strcat(identifiers_type_list[identifiers_type_list_ptr].type, cur_type);
 				strcpy(identifiers_type_list[identifiers_type_list_ptr].name, $<String>1);
-			}
+			} array_declaration initilization
 			| MULTIPLICATION_OPERATOR single_element_declaration // Pointer
 			{
 				type_insert($<String>1);

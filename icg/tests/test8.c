@@ -11,5 +11,5 @@ void main()
     c = 5;
     d = 6;
 
-    c = sum_sqaure(c, d);
+    c = sum_square(c, d);
 }
